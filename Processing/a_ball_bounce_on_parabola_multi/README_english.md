@@ -1,4 +1,4 @@
-# Sample code of a bouncing particle on parabola curve
+# A bouncing particle on parabola floor
 
 File Name: `a_ball_bounce_on_parabola_multi.pde`
 

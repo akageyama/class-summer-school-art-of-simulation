@@ -1,24 +1,25 @@
-# 講義「システム情報学概論」サンプルコード
+# Sample codes for the class "Art of Simulation"
 
+* Author: Akira Kageyama (kage@port.kobe-u.ac.jp)
+* For Summer School 2024, Kobe Univ., Japan
+* Language Used: [p5.js](https://p5js.org)
+* Two Sample Codes (two directories)
+    * `a_ball_bounce_on_parabola_multi`
+        * One particle free-falls under gravity and bounces on the lower parabola.
+    * `two_balls_on_parabolas_multi`
+        * Two particles (with the same mass) slide without friction on separate parabolas.
 
-使用言語：[Processing](https://processing.org)
-
-* 2つのサンプルコード（2つのディレクトリ）
-	*  `two_balls_on_parabolas_multi`
-		* 2つの質点（質量同じ）がそれぞれ別の放物線の上を摩擦なしで滑る。
-	* `a_ball_bounce_on_parabola_multi`
-		* 1つの質点が重力中を自由落下し、下方の放物線で跳ね返る。
-
-* プログラムの基本構造はどちらも同じ。
-    - 運動方程式を`equation_of_motion()`関数で解く。
-       -  系の自由度は2である。
-       -  4成分の一般化座標 (`GeneralCoords`) を使う。
-    - 数値積分には古典的な4次ルンゲ・クッタ法を使う。
-    - 座標や物理量は`float`（単精度）浮動小数点数として計算している。
-    - 精度確認のため全エネルギーを計算・表示する。
+* The basic structure of both programs is the same.
+    - Solve the equations of motion with the `equation_of_motion()` function.
+       - The system has 2 degrees of freedom.
+       - Uses 4-component generalized coordinates (`GeneralCoords`).
+    - Classical 4th-order Runge-Kutta method is used for numerical integration.
+    - Coordinates and physical quantities are calculated as `float` (single precision) floating-point numbers.
+    - The total energy is calculated and displayed to check accuracy.
   
-  * 可視化
-    - Processingのウィンドウ画面を3つの領域に分割して使う。
+* Visualization
+    - The Preview window is divided into three areas.
+ 
 ``` 
         +------------+------------+------------+
         |            |            |            |
@@ -30,13 +31,15 @@
         +------------+------------+------------+
 ```
        
-  * 使用法
-    - 初期条件の設定は setup()関数の以下の部分で変更する。
-    - キーボードの`u`キーで計算（表示）の加速。
-    - キーボードの`d`キーで計算（表示）の減速。
-    - キーボードの`s`キーで計算（表示）の一時停止(stop)と再スタート(start)。
-    - マウスクリックもstart/stopのトグル。 
+  * Usage
+    - Initial conditions can be changed in the `setup()` function.
+    - Press the `u` key on the keyboard to accelerate the calculation (display).
+    - Press the `d` key on the keyboard to decelerate the calculation (display).
+    - Press the `s` key on the keyboard to pause (stop) and restart (start) the calculation (display).
+    - Mouse click also toggles start/stop. 
     
-  * 開発履歴
+  * Development History
     - Akira Kageyama (kage@port.kobe-u.ac.jp)
-    - July 06, 2023
+    - July 06, 2023: Developed in Processing
+    - July 08, 2023: Converted into p5.js
+    - June 20, 2024: Refactoring.

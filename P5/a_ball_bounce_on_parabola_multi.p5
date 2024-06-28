@@ -388,10 +388,10 @@ function setup()
     header.title("Poincare map of (x,vx) on vy=0  ", RIGHT); // 自由落下。下に凸な包路線
 
     ball = new GeneralCoords(
-        1.0,
-        0.0, // x & vx
-        1.5, // y & vy
-        0.0
+        1.0, // Initial position x
+        0.0, // Initial velocity vx
+        1.5, // Initial position y
+        0.0  // Initial velocity vy
     );
 
     //
